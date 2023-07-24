@@ -40,6 +40,11 @@ class SyncStatusOnPostUpdate {
 			Fns::map( Obj::prop( 'element_id' ) )
 		);
 
+		// Prevent running logic if the old and new status are the same
+		if ( $new_status == $old_status ) {
+			return;
+		}
+
 		// The current post is not the original or has no translations
 		if ( ! $getPostsToUpdate( $post->ID ) ) {
 			return;
