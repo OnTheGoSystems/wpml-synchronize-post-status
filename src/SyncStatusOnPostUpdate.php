@@ -41,7 +41,7 @@ class SyncStatusOnPostUpdate {
 		);
 
 		// Prevent running logic if the old and new status are the same
-		if ( $new_status == $old_status ) {
+		if ( $new_status === $old_status ) {
 			return;
 		}
 
