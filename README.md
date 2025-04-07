@@ -31,4 +31,9 @@ However, you can configure the post types to keep in sync using one or both opti
 - Hook to the `wpml_synchronize_post_status_post_types` filter. This filter receives the current list of post types.  
   Example: `add_filter( 'wpml_synchronize_post_status_post_types', function( $allowed_post_types ) { return array_merge($allowed_post_types, [ 'products' ]); } )`
 
+You can also blacklist post types so they are not synchronized:
+
+- Hook to the `wpml_synchronize_post_status_post_types_exclude` filter. This filter receives the current list of post types to exclude.  
+  Example: `add_filter( 'wpml_synchronize_post_status_post_types_exclude', function( $excluded_post_types ) { return array_merge($excluded_post_types, [ 'books' ]); } )`
+
 By default, the array of allowed posts types is empty. That means that all post types will be kept in sync.
