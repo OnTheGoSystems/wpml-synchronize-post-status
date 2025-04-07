@@ -8,14 +8,19 @@ Author: Andrea Sciamanna
 Author URI: https://www.onthegosystems.com/team/andrea-sciamanna/
 */
 
-namespace WPML\Core;
-
-// don't load directly
+// Don't load directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-require_once __DIR__ . '/src/SyncStatusOnPostUpdate.php';
+add_action( 'plugins_loaded', 'checkWPMLSPSrequirements' );
 
-$syncStatusOnPostUpdate = new SyncStatusOnPostUpdate();
-$syncStatusOnPostUpdate->init_hooks();
+function checkWPMLSPSrequirements() {
+	if ( ! defined( 'ICL_SITEPRESS_VERSION' ) ) {
+		return;
+	}
+	require_once __DIR__ . '/src/SyncStatusOnPostUpdate.php';
+
+	$syncStatusOnPostUpdate = new \WPML\Core\SyncStatusOnPostUpdate();
+	$syncStatusOnPostUpdate->init_hooks();
+}
