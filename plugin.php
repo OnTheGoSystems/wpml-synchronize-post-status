@@ -3,9 +3,9 @@
 Plugin Name: WPML Synchronize Post Status
 Plugin URI: http://wpml.org
 Description: Keep the status of a post in sync with its translations.
-Version: 0.0.1
-Author: Andrea Sciamanna
-Author URI: https://www.onthegosystems.com/team/andrea-sciamanna/
+Version: 0.0.2
+Author: OnTheGoSystems
+Author URI: http://www.onthegosystems.com/
 */
 
 // Don't load directly.
